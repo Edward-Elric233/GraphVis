@@ -24,8 +24,8 @@ void input(Graph& G, GraphAttributes& GA) {
 
 void GraphLayout::setGraphAttribute() {
     for (auto node : G_.nodes) {
-        GA_.height(node) = 500;
-        GA_.width(node) = 500;
+        GA_.height(node) = 100;
+        GA_.width(node) = 100;
         GA_.shape(node) = Shape::Ellipse;
         GA_.fillColor(node) = Color::Name::Antiquewhite;
         //GA.label(node) = to_string(node->index());
