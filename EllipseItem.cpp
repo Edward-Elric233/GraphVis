@@ -37,3 +37,8 @@ void EllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
         sourceEdge->setLine(pos.x(), pos.y(), line.x2(), line.y2());
     }
 }
+
+void EllipseItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
+    QGraphicsItem::mousePressEvent(event);
+    emit clicked();
+}

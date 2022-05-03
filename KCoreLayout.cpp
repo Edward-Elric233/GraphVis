@@ -219,7 +219,7 @@ void KCoreLayout::partition() {
                     phi_init += Param::TWOPI * rate;
                     new_component->setPhi(phi_init);
 
-                    t = (c_max_ - c) * new_component->getU() * new_component->getRho();
+                    t = (c_max_ - c) * component->getU() * new_component->getRho();
                     new_component->setA(t * std::cos(new_component->getPhi()));
                     new_component->setB(t * std::sin(new_component->getPhi()));
 
@@ -308,7 +308,7 @@ void KCoreLayout::call(GraphAttributes &GA) {
 
     initGraph(GA);
     kCoreDecomposition();
-    //colour(GA);
+    colour(GA);
     partition();
     layout();
     draw(GA);
@@ -324,7 +324,7 @@ void KCoreLayout::call(GraphAttributes &GA) {
 
 KCoreLayout::KCoreLayout() {
     //初始化参数
-    SingleTon<Param>::getInstance(0.4, 100, 300);
+    SingleTon<Param>::getInstance(0.4, 300, 300);
 }
 
 KCoreLayout::~KCoreLayout() {}

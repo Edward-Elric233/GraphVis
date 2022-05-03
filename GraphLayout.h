@@ -6,6 +6,7 @@
 #ifndef GRAPHLAYOUT_GRAPHLAYOUT_H
 #define GRAPHLAYOUT_GRAPHLAYOUT_H
 
+#include "utils.h"
 #include <functional>
 #include <ogdf/basic/Graph.h>
 #include <ogdf/basic/GraphAttributes.h>

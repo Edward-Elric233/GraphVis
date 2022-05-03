@@ -9,7 +9,8 @@
 #include <QGraphicsEllipseItem>
 #include <vector>
 
-class EllipseItem : public QGraphicsEllipseItem {
+class EllipseItem : public QObject, public QGraphicsEllipseItem {
+    Q_OBJECT
 public:
     EllipseItem(double x, double y, double w, double h);
     ~EllipseItem();
@@ -21,9 +22,13 @@ public:
     }
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+
 private:
     std::vector<QGraphicsLineItem *> targetEdges_;  //保存作为target的邻接边
     std::vector<QGraphicsLineItem *> sourceEdges_;  //保存作为source的邻接边
+signals:
+    void clicked();
 };
 
 
